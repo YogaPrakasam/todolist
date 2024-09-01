@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+</head>
+<body>
+    <style>
+        *{
+            background-color: black;
+            color: white;  }
+        .overall{
+            /* text-align: center;
+            padding: 45px; */
+            margin-top: 50px;
+            margin-left: 500px; }
+        button{
+            background-color: white;
+            color: brown;
+            font-size: medium;
+            font-style: oblique;
+            margin-left: 10px;
+            margin-top: 5px;     }
+        #input{
+            background-color: white;
+            color:black;
+            font-size: large;  }
+    </style>
+
+ <div class="overall">
+
+
+    <input type="text" id="input">
+    <button onclick="add()" >Add</button>
+    <ul id="listcontainer">
+        <li>START YOUR ROUTINE <button onclick="delitem(event)">Delete</button></li>
+    </ul>
+    </div>
+
+
+    <script>
+        var input=document.getElementById("input")
+        var ul=document.getElementById("listcontainer")
+         function add(){
+            var listitem=document.createElement("li")
+            listitem.innerHTML=input.value + "<button onclick='delitem(event)'> Delete </button>"
+            ul.append(listitem)
+         }
+         function delitem(event){
+            event.target.parentElement.remove()
+         }
+    </script>
+</body>
+</html>
